@@ -1,0 +1,6 @@
+description = ""
+requires = ""
+archive(byte) = "matrix_project.cma"
+archive(native) = "matrix_project.cmxa"
+plugin(byte) = "matrix_project.cma"
+plugin(native) = "matrix_project.cmxs"

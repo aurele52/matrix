@@ -1,0 +1,78 @@
+lib: [
+  "_build/install/default/lib/matrix_project/META"
+  "_build/install/default/lib/matrix_project/Module/Dims.ml" {"Module/Dims.ml"}
+  "_build/install/default/lib/matrix_project/Module/Field.ml" {"Module/Field.ml"}
+  "_build/install/default/lib/matrix_project/Module/FloatField.ml" {"Module/FloatField.ml"}
+  "_build/install/default/lib/matrix_project/Module/IntField.ml" {"Module/IntField.ml"}
+  "_build/install/default/lib/matrix_project/Module/MakeLinear.ml" {"Module/MakeLinear.ml"}
+  "_build/install/default/lib/matrix_project/Module/MakeMatrix.ml" {"Module/MakeMatrix.ml"}
+  "_build/install/default/lib/matrix_project/Module/MakeTensor.ml" {"Module/MakeTensor.ml"}
+  "_build/install/default/lib/matrix_project/Module/MakeVSpace.ml" {"Module/MakeVSpace.ml"}
+  "_build/install/default/lib/matrix_project/Module/Nat_number.ml" {"Module/Nat_number.ml"}
+  "_build/install/default/lib/matrix_project/Module/Scalar.ml" {"Module/Scalar.ml"}
+  "_build/install/default/lib/matrix_project/Module/Vecteur.ml" {"Module/Vecteur.ml"}
+  "_build/install/default/lib/matrix_project/Module/Vspace.ml" {"Module/Vspace.ml"}
+  "_build/install/default/lib/matrix_project/Module/proof_to_int.ml" {"Module/proof_to_int.ml"}
+  "_build/install/default/lib/matrix_project/Module/tensor.ml" {"Module/tensor.ml"}
+  "_build/install/default/lib/matrix_project/dune-package"
+  "_build/install/default/lib/matrix_project/matrix_project.a"
+  "_build/install/default/lib/matrix_project/matrix_project.cma"
+  "_build/install/default/lib/matrix_project/matrix_project.cmi"
+  "_build/install/default/lib/matrix_project/matrix_project.cmt"
+  "_build/install/default/lib/matrix_project/matrix_project.cmx"
+  "_build/install/default/lib/matrix_project/matrix_project.cmxa"
+  "_build/install/default/lib/matrix_project/matrix_project.ml"
+  "_build/install/default/lib/matrix_project/matrix_project__Module.cmi"
+  "_build/install/default/lib/matrix_project/matrix_project__Module.cmt"
+  "_build/install/default/lib/matrix_project/matrix_project__Module.cmx"
+  "_build/install/default/lib/matrix_project/matrix_project__Module__Dims.cmi"
+  "_build/install/default/lib/matrix_project/matrix_project__Module__Dims.cmt"
+  "_build/install/default/lib/matrix_project/matrix_project__Module__Dims.cmx"
+  "_build/install/default/lib/matrix_project/matrix_project__Module__Field.cmi"
+  "_build/install/default/lib/matrix_project/matrix_project__Module__Field.cmt"
+  "_build/install/default/lib/matrix_project/matrix_project__Module__Field.cmx"
+  "_build/install/default/lib/matrix_project/matrix_project__Module__FloatField.cmi"
+  "_build/install/default/lib/matrix_project/matrix_project__Module__FloatField.cmt"
+  "_build/install/default/lib/matrix_project/matrix_project__Module__FloatField.cmx"
+  "_build/install/default/lib/matrix_project/matrix_project__Module__IntField.cmi"
+  "_build/install/default/lib/matrix_project/matrix_project__Module__IntField.cmt"
+  "_build/install/default/lib/matrix_project/matrix_project__Module__IntField.cmx"
+  "_build/install/default/lib/matrix_project/matrix_project__Module__MakeLinear.cmi"
+  "_build/install/default/lib/matrix_project/matrix_project__Module__MakeLinear.cmt"
+  "_build/install/default/lib/matrix_project/matrix_project__Module__MakeLinear.cmx"
+  "_build/install/default/lib/matrix_project/matrix_project__Module__MakeMatrix.cmi"
+  "_build/install/default/lib/matrix_project/matrix_project__Module__MakeMatrix.cmt"
+  "_build/install/default/lib/matrix_project/matrix_project__Module__MakeMatrix.cmx"
+  "_build/install/default/lib/matrix_project/matrix_project__Module__MakeTensor.cmi"
+  "_build/install/default/lib/matrix_project/matrix_project__Module__MakeTensor.cmt"
+  "_build/install/default/lib/matrix_project/matrix_project__Module__MakeTensor.cmx"
+  "_build/install/default/lib/matrix_project/matrix_project__Module__MakeVSpace.cmi"
+  "_build/install/default/lib/matrix_project/matrix_project__Module__MakeVSpace.cmt"
+  "_build/install/default/lib/matrix_project/matrix_project__Module__MakeVSpace.cmx"
+  "_build/install/default/lib/matrix_project/matrix_project__Module__Nat_number.cmi"
+  "_build/install/default/lib/matrix_project/matrix_project__Module__Nat_number.cmt"
+  "_build/install/default/lib/matrix_project/matrix_project__Module__Nat_number.cmx"
+  "_build/install/default/lib/matrix_project/matrix_project__Module__Proof_to_int.cmi"
+  "_build/install/default/lib/matrix_project/matrix_project__Module__Proof_to_int.cmt"
+  "_build/install/default/lib/matrix_project/matrix_project__Module__Proof_to_int.cmx"
+  "_build/install/default/lib/matrix_project/matrix_project__Module__Scalar.cmi"
+  "_build/install/default/lib/matrix_project/matrix_project__Module__Scalar.cmt"
+  "_build/install/default/lib/matrix_project/matrix_project__Module__Scalar.cmx"
+  "_build/install/default/lib/matrix_project/matrix_project__Module__Tensor.cmi"
+  "_build/install/default/lib/matrix_project/matrix_project__Module__Tensor.cmt"
+  "_build/install/default/lib/matrix_project/matrix_project__Module__Tensor.cmx"
+  "_build/install/default/lib/matrix_project/matrix_project__Module__Vecteur.cmi"
+  "_build/install/default/lib/matrix_project/matrix_project__Module__Vecteur.cmt"
+  "_build/install/default/lib/matrix_project/matrix_project__Module__Vecteur.cmx"
+  "_build/install/default/lib/matrix_project/matrix_project__Module__Vspace.cmi"
+  "_build/install/default/lib/matrix_project/matrix_project__Module__Vspace.cmt"
+  "_build/install/default/lib/matrix_project/matrix_project__Module__Vspace.cmx"
+  "_build/install/default/lib/matrix_project/module/module.ml" {"module/module.ml"}
+  "_build/install/default/lib/matrix_project/opam"
+]
+libexec: [
+  "_build/install/default/lib/matrix_project/matrix_project.cmxs"
+]
+bin: [
+  "_build/install/default/bin/matrix_project"
+]

@@ -1,0 +1,4 @@
+(executable
+ (public_name matrix_project)
+ (name main)
+ (libraries matrix_project))
