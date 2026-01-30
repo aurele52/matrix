@@ -1,5 +1,4 @@
-
-module IntField : Field.FIELD with type t = int = struct
+module IntField : Type.Field.FIELD with type t = int = struct
   type t = int
   let zero = 0
   let one  = 1
@@ -9,4 +8,5 @@ module IntField : Field.FIELD with type t = int = struct
   let egal = (=)
   let abs = abs
   let print = print_int
+  let to_float = (Int.to_float)
 end

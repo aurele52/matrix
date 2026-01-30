@@ -1,4 +1,4 @@
-module MakeLinear (V : Vspace.VSPACE) = struct
+module MakeLinear (V : Type.Vspace.VSPACE) = struct
   module K = V.K
 
   (* zip récursif sécurisé *)

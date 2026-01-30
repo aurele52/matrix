@@ -1,1 +1,1 @@
-lib/Module/IntField.ml: Field
+lib/Module/IntField.ml: Int Type

@@ -1,17 +1,17 @@
-module MakeMatrix (K : Field.FIELD) = struct
+module MakeMatrix (K : Type.Field.FIELD) = struct
   module K = K
   module T = MakeTensor.MakeTensorND(K)
 
   (* shape type-level pour 2D *)
-  type ('r,'c) dims2 = ('r, ('c, Dims.nil) Dims.cons) Dims.cons
+  type ('r,'c) dims2 = ('r, ('c, Type.Dims.nil) Type.Dims.cons) Type.Dims.cons
 
   (* matrice 2D = tenseur ND avec dims2 *)
   type ('r,'c) mat = (('r,'c) dims2) T.t
 
-  let make (rows : 'r Nat_number.nat) (cols : 'c Nat_number.nat) (data : K.t array) : ('r,'c) mat =
+  let make (rows : 'r Type.Nat_number.nat) (cols : 'c Type.Nat_number.nat) (data : K.t array) : ('r,'c) mat =
     T.make (DCons (rows, DCons (cols, DNil))) data
 
-  let init (rows : 'r Nat_number.nat) (cols : 'c Nat_number.nat) (f:int -> int -> K.t) : ('r,'c) mat =
+  let init (rows : 'r Type.Nat_number.nat) (cols : 'c Type.Nat_number.nat) (f:int -> int -> K.t) : ('r,'c) mat =
     T.init (DCons (rows, DCons (cols, DNil)))
       (fun idx -> f idx.(0) idx.(1))
 
@@ -80,7 +80,7 @@ module MakeMatrix (K : Field.FIELD) = struct
   let fold = T.fold
 
   (* Exposer une vue VSPACE polymorphe : type 'd t = 'd T.t *)
-  module Vspace : Vspace.VSPACE with module K = K and type 'd t = 'd T.t =
+  module Vspace : Type.Vspace.VSPACE with module K = K and type 'd t = 'd T.t =
     MakeVSpace.MakeVspace(struct
     module K = K
     type 'd t = 'd T.t

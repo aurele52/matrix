@@ -1,1 +1,1 @@
-lib/Module/MakeVSpace.ml: Vspace
+lib/Module/MakeVSpace.ml: Type

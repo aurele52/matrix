@@ -1,16 +1,16 @@
 open Matrix_project
 open Module
-open Nat_number
+open Type.Nat_number
 
-module SI = Scalar.MakeScalar(Module.IntField.IntField)
-module VF = Vecteur.MakeVec(FloatField.FloatField)
-module VI = Vecteur.MakeVec(IntField.IntField)
+module SI = MakeScalar.MakeScalar(Module.IntField.IntField)
+module VF = MakeVecteur.MakeVecteur(FloatField.FloatField)
+module VI = MakeVecteur.MakeVecteur(IntField.IntField)
 module MI = MakeMatrix.MakeMatrix(IntField.IntField)
 
 (* let n1 : z s nat = (Succ Zero) *)
 let n2 : z s s nat = Succ (Succ Zero)
 let n3 : z s s s nat = Succ (Succ (Succ Zero))
-(* let n4 : z s s s s nat = Succ (Succ (Succ (Succ Zero))) *)
+let n4 : z s s s s nat = Succ (Succ (Succ (Succ Zero)))
 
 
 
@@ -77,6 +77,13 @@ let () = VF.print ( VSVF.lerp (v3a) (v3b) 0.5)
 let () = print_endline ""
 let () = print_float (VF.dot v3a v3b)
 (* let m32a = MI.make n3 n2 [|1;2;3;0;10;-100|] *)
+let v4a = VI.make n4 [| 1; -2; 3; -4 |]
+let () = print_endline ""
+let () = print_float (VI.norm_1 v4a)
+let () = print_endline ""
+let () = print_float (VI.norm_2 v4a)
+let () = print_endline ""
+let () = print_float (VI.norm_inf v4a)
 (* let () = MI.print (MI.add m32a m23a) *)
 
 

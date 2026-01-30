@@ -4,20 +4,19 @@
 (files
  (lib
   (META
-   Module/Dims.ml
-   Module/Field.ml
    Module/FloatField.ml
    Module/IntField.ml
    Module/MakeLinear.ml
    Module/MakeMatrix.ml
+   Module/MakeScalar.ml
    Module/MakeTensor.ml
    Module/MakeVSpace.ml
-   Module/Nat_number.ml
-   Module/Scalar.ml
-   Module/Vecteur.ml
-   Module/Vspace.ml
-   Module/proof_to_int.ml
-   Module/tensor.ml
+   Module/MakeVecteur.ml
+   Module/Type/Dims.ml
+   Module/Type/Field.ml
+   Module/Type/Nat_number.ml
+   Module/Type/Vspace.ml
+   Module/Type/tensor.ml
    dune-package
    matrix_project.a
    matrix_project.cma
@@ -29,12 +28,6 @@
    matrix_project__Module.cmi
    matrix_project__Module.cmt
    matrix_project__Module.cmx
-   matrix_project__Module__Dims.cmi
-   matrix_project__Module__Dims.cmt
-   matrix_project__Module__Dims.cmx
-   matrix_project__Module__Field.cmi
-   matrix_project__Module__Field.cmt
-   matrix_project__Module__Field.cmx
    matrix_project__Module__FloatField.cmi
    matrix_project__Module__FloatField.cmt
    matrix_project__Module__FloatField.cmx
@@ -47,31 +40,38 @@
    matrix_project__Module__MakeMatrix.cmi
    matrix_project__Module__MakeMatrix.cmt
    matrix_project__Module__MakeMatrix.cmx
+   matrix_project__Module__MakeScalar.cmi
+   matrix_project__Module__MakeScalar.cmt
+   matrix_project__Module__MakeScalar.cmx
    matrix_project__Module__MakeTensor.cmi
    matrix_project__Module__MakeTensor.cmt
    matrix_project__Module__MakeTensor.cmx
    matrix_project__Module__MakeVSpace.cmi
    matrix_project__Module__MakeVSpace.cmt
    matrix_project__Module__MakeVSpace.cmx
-   matrix_project__Module__Nat_number.cmi
-   matrix_project__Module__Nat_number.cmt
-   matrix_project__Module__Nat_number.cmx
-   matrix_project__Module__Proof_to_int.cmi
-   matrix_project__Module__Proof_to_int.cmt
-   matrix_project__Module__Proof_to_int.cmx
-   matrix_project__Module__Scalar.cmi
-   matrix_project__Module__Scalar.cmt
-   matrix_project__Module__Scalar.cmx
-   matrix_project__Module__Tensor.cmi
-   matrix_project__Module__Tensor.cmt
-   matrix_project__Module__Tensor.cmx
-   matrix_project__Module__Vecteur.cmi
-   matrix_project__Module__Vecteur.cmt
-   matrix_project__Module__Vecteur.cmx
-   matrix_project__Module__Vspace.cmi
-   matrix_project__Module__Vspace.cmt
-   matrix_project__Module__Vspace.cmx
+   matrix_project__Module__MakeVecteur.cmi
+   matrix_project__Module__MakeVecteur.cmt
+   matrix_project__Module__MakeVecteur.cmx
+   matrix_project__Module__Type.cmi
+   matrix_project__Module__Type.cmt
+   matrix_project__Module__Type.cmx
+   matrix_project__Module__Type__Dims.cmi
+   matrix_project__Module__Type__Dims.cmt
+   matrix_project__Module__Type__Dims.cmx
+   matrix_project__Module__Type__Field.cmi
+   matrix_project__Module__Type__Field.cmt
+   matrix_project__Module__Type__Field.cmx
+   matrix_project__Module__Type__Nat_number.cmi
+   matrix_project__Module__Type__Nat_number.cmt
+   matrix_project__Module__Type__Nat_number.cmx
+   matrix_project__Module__Type__Tensor.cmi
+   matrix_project__Module__Type__Tensor.cmt
+   matrix_project__Module__Type__Tensor.cmx
+   matrix_project__Module__Type__Vspace.cmi
+   matrix_project__Module__Type__Vspace.cmt
+   matrix_project__Module__Type__Vspace.cmx
    module/module.ml
+   module/type/type.ml
    opam))
  (libexec (matrix_project.cmxs))
  (bin (matrix_project)))
@@ -105,14 +105,6 @@
       (name Module)
       (modules
        (module
-        (obj_name matrix_project__Module__Dims)
-        (visibility public)
-        (source (path Module Dims) (impl (path Module/Dims.ml))))
-       (module
-        (obj_name matrix_project__Module__Field)
-        (visibility public)
-        (source (path Module Field) (impl (path Module/Field.ml))))
-       (module
         (obj_name matrix_project__Module__FloatField)
         (visibility public)
         (source (path Module FloatField) (impl (path Module/FloatField.ml))))
@@ -129,6 +121,10 @@
         (visibility public)
         (source (path Module MakeMatrix) (impl (path Module/MakeMatrix.ml))))
        (module
+        (obj_name matrix_project__Module__MakeScalar)
+        (visibility public)
+        (source (path Module MakeScalar) (impl (path Module/MakeScalar.ml))))
+       (module
         (obj_name matrix_project__Module__MakeTensor)
         (visibility public)
         (source (path Module MakeTensor) (impl (path Module/MakeTensor.ml))))
@@ -137,29 +133,44 @@
         (visibility public)
         (source (path Module MakeVSpace) (impl (path Module/MakeVSpace.ml))))
        (module
-        (obj_name matrix_project__Module__Nat_number)
+        (obj_name matrix_project__Module__MakeVecteur)
         (visibility public)
-        (source (path Module Nat_number) (impl (path Module/Nat_number.ml))))
-       (module
-        (obj_name matrix_project__Module__Proof_to_int)
-        (visibility public)
-        (source
-         (path Module Proof_to_int)
-         (impl (path Module/proof_to_int.ml))))
-       (module
-        (obj_name matrix_project__Module__Scalar)
-        (visibility public)
-        (source (path Module Scalar) (impl (path Module/Scalar.ml))))
-       (module
-        (obj_name matrix_project__Module__Tensor)
-        (visibility public)
-        (source (path Module Tensor) (impl (path Module/tensor.ml))))
-       (module
-        (obj_name matrix_project__Module__Vecteur)
-        (visibility public)
-        (source (path Module Vecteur) (impl (path Module/Vecteur.ml))))
-       (module
-        (obj_name matrix_project__Module__Vspace)
-        (visibility public)
-        (source (path Module Vspace) (impl (path Module/Vspace.ml))))))))
+        (source (path Module MakeVecteur) (impl (path Module/MakeVecteur.ml))))
+       (group
+        Type
+        (alias
+         (obj_name matrix_project__Module__Type)
+         (visibility public)
+         (kind (alias (Module Type)))
+         (source
+          (path Module Type Type)
+          (impl (path matrix_project__Module__Type.ml-gen))))
+        (name Type)
+        (modules
+         (module
+          (obj_name matrix_project__Module__Type__Dims)
+          (visibility public)
+          (source (path Module Type Dims) (impl (path Module/Type/Dims.ml))))
+         (module
+          (obj_name matrix_project__Module__Type__Field)
+          (visibility public)
+          (source (path Module Type Field) (impl (path Module/Type/Field.ml))))
+         (module
+          (obj_name matrix_project__Module__Type__Nat_number)
+          (visibility public)
+          (source
+           (path Module Type Nat_number)
+           (impl (path Module/Type/Nat_number.ml))))
+         (module
+          (obj_name matrix_project__Module__Type__Tensor)
+          (visibility public)
+          (source
+           (path Module Type Tensor)
+           (impl (path Module/Type/tensor.ml))))
+         (module
+          (obj_name matrix_project__Module__Type__Vspace)
+          (visibility public)
+          (source
+           (path Module Type Vspace)
+           (impl (path Module/Type/Vspace.ml))))))))))
    (wrapped true))))

@@ -1,1 +1,1 @@
-lib/Module/MakeLinear.ml: Vspace
+lib/Module/MakeLinear.ml: Type

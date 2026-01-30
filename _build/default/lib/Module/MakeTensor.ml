@@ -1,29 +1,29 @@
-module MakeTensorND (K : Field.FIELD) = struct
+module MakeTensorND (K : Type.Field.FIELD) = struct
   module K = K
 
   type 'ds t = {
-    dims : 'ds Dims.dims;
+    dims : 'ds Type.Dims.dims;
     data : K.t array;
   }
 
-let rec int_of_nat : type n. n Nat_number.nat -> int = function
+let rec int_of_nat : type n. n Type.Nat_number.nat -> int = function
   | Zero -> 0
   | Succ n -> 1 + int_of_nat n
 
-  let rec dims_to_ints : type ds. ds Dims.dims -> int list = function
+  let rec dims_to_ints : type ds. ds Type.Dims.dims -> int list = function
     | DNil -> []
     | DCons (d, rest) -> int_of_nat d :: dims_to_ints rest
 
-  let numel (type ds) (ds : ds Dims.dims) : int =
+  let numel (type ds) (ds : ds Type.Dims.dims) : int =
     List.fold_left ( * ) 1 (dims_to_ints ds)
 
-  let make : type ds. ds Dims.dims -> K.t array -> ds t =
+  let make : type ds. ds Type.Dims.dims -> K.t array -> ds t =
     fun dims data ->
       let n = numel dims in
       if Array.length data <> n then invalid_arg "Tensor.make: bad dimension";
       { dims; data }
 
-  let init (dims : 'ds Dims.dims) (f : int array -> K.t) : 'ds t =
+  let init (dims : 'ds Type.Dims.dims) (f : int array -> K.t) : 'ds t =
     let shape = Array.of_list (dims_to_ints dims) in (* [2, 5, 1]*)
     let n = Array.fold_left ( * ) 1 shape in (*10*)
 

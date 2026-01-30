@@ -1,1 +1,1 @@
-lib/Module/FloatField.ml: Field Float
+lib/Module/FloatField.ml: Float Type
