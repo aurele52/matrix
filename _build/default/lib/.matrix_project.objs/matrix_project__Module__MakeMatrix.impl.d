@@ -1,1 +1,1 @@
-lib/Module/MakeMatrix.ml: Array MakeTensor MakeVSpace Type
+lib/Module/MakeMatrix.ml: Array MakeTensor MakeVSpace MakeVecteur Type

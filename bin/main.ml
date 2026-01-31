@@ -84,6 +84,14 @@ let () = print_endline ""
 let () = print_float (VI.norm_2 v4a)
 let () = print_endline ""
 let () = print_float (VI.norm_inf v4a)
+let () = print_endline ""
+let () = print_float (VF.angle_cos v3a v3b)
+let () = print_endline ""
+
+let m23anew = MI.make n2 n3 [|1;2;3;0;10;-100|]
+let () = MI.print m23anew
+let () = MI.print (MI.transpose m23anew)
+
 (* let () = MI.print (MI.add m32a m23a) *)
 
 

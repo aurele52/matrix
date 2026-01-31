@@ -39,6 +39,14 @@ module MakeVecteur (K : Type.Field.FIELD) = struct
     else
       K.to_float d /. (nu *. nv)
 
+  let cross_product (v1 : Type.Nat_number.z Type.Nat_number.s Type.Nat_number.s Type.Nat_number.s Type.Nat_number.nat vec) (v2 : Type.Nat_number.z Type.Nat_number.s Type.Nat_number.s Type.Nat_number.s Type.Nat_number.nat vec) : Type.Nat_number.z Type.Nat_number.s Type.Nat_number.s Type.Nat_number.s Type.Nat_number.nat vec = 
+    if Array.length v1.data = 3 && Array.length v2.data = 3 then     {v1 with data = [|
+      K.sub (K.mul v1.data.(1) v2.data.(2)) (K.mul v1.data.(2) v2.data.(1));
+      K.sub (K.mul v1.data.(2) v2.data.(0)) (K.mul v1.data.(0) v2.data.(2));
+      K.sub (K.mul v1.data.(0) v2.data.(1)) (K.mul v1.data.(1) v2.data.(0))
+    |]} else invalid_arg "Cross_Product: bad dimension"
+
+
   let print (v : 'n vec) : unit =
     let a = v.data in
     let rec print_el_rec i =
