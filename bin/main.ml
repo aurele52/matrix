@@ -6,6 +6,7 @@ module SI = MakeScalar.MakeScalar(Module.IntField.IntField)
 module VF = MakeVecteur.MakeVecteur(FloatField.FloatField)
 module VI = MakeVecteur.MakeVecteur(IntField.IntField)
 module MI = MakeMatrix.MakeMatrix(IntField.IntField)
+module MF = MakeMatrix.MakeMatrix(FloatField.FloatField)
 
 (* let n1 : z s nat = (Succ Zero) *)
 let n2 : z s s nat = Succ (Succ Zero)
@@ -92,7 +93,32 @@ let m23anew = MI.make n2 n3 [|1;2;3;0;10;-100|]
 let () = MI.print m23anew
 let () = MI.print (MI.transpose m23anew)
 
+let () = print_endline "aaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
 (* let () = MI.print (MI.add m32a m23a) *)
 
+
+(* exemples de tests, dans le même style que ton snippet *)
+
+let m23a = MF.make n2 n3 [| 1.; 2.; 3.;
+                           0.; 10.; -100. |]
+
+let () = print_endline "m23a ="; MF.print m23a
+let () = print_endline "transpose(m23a) ="; MF.print (MF.transpose m23a)
+
+let () = print_endline "row_echelon(m23a) ="; MF.print (MF.row_echelon m23a)
+let () = print_endline "rref(m23a) ="; MF.print (MF.rref m23a)
+
+
+(* un autre test simple qui doit donner un truc “propre” en RREF *)
+let m33 = MF.make n3 n3 [| 1.; 2.; 3.;
+                          0.; 0.; 3.;
+                          0.; 0.; 0. |]
+let m22 = MF.make n2 n2 [| 3.; 2.;
+                           2.; 2. |]
+
+let () = print_endline "m33 ="; MF.print m33
+let () = print_endline "rref(m33) ="; MF.print (MF.rref m33)
+let () = print_endline "rang(m33) ="; print_int (MF.rang m33)
+let () = print_endline "rang(m33) ="; print_float (MF.determinant m22)
 
 

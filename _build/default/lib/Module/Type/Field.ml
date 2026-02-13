@@ -5,7 +5,9 @@ module type FIELD = sig
   val add  : t -> t -> t
   val sub  : t -> t -> t
   val mul  : t -> t -> t
+  val div  : t -> t -> t
   val egal : t -> t -> bool
+  val neg: t -> t
   val abs  : t -> t
   val to_float : t -> float
   val print : t -> unit

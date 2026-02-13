@@ -5,7 +5,9 @@ module IntField : Type.Field.FIELD with type t = int = struct
   let add  = ( + )
   let sub  = ( - )
   let mul  = ( * )
+  let div = (/)
   let egal = (=)
+  let neg = (fun a -> -a)
   let abs = abs
   let print = print_int
   let to_float = (Int.to_float)

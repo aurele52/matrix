@@ -17,11 +17,11 @@ let rec int_of_nat : type n. n Type.Nat_number.nat -> int = function
   let numel (type ds) (ds : ds Type.Dims.dims) : int =
     List.fold_left ( * ) 1 (dims_to_ints ds)
 
-  let make : type ds. ds Type.Dims.dims -> K.t array -> ds t =
-    fun dims data ->
-      let n = numel dims in
-      if Array.length data <> n then invalid_arg "Tensor.make: bad dimension";
-      { dims; data }
+let make (type ds) (dims : ds Type.Dims.dims) (data : K.t array): ds t =
+  let n = numel dims in
+  if Array.length data <> n then
+    invalid_arg "Tensor.make: bad dimension";
+  { dims; data = Array.copy data }
 
   let init (dims : 'ds Type.Dims.dims) (f : int array -> K.t) : 'ds t =
     let shape = Array.of_list (dims_to_ints dims) in (* [2, 5, 1]*)
